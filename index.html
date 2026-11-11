@@ -4,58 +4,203 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Szelesdomb FM – Élő rádió</title>
+
+<title>Szelesdomb FM | Élő rádió</title>
+
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  margin: 0;
-  background: #101010;
-  color: white;
+  background: #0b0b0e;
+  color: #fff;
   font-family: Arial, sans-serif;
-  text-align: center;
 }
 
 header {
-  padding: 65px 20px 40px;
-  background: linear-gradient(135deg, #350000, #111);
-  border-bottom: 2px solid #e32636;
+  height: 75px;
+  background: #111114;
+  border-bottom: 1px solid #29292e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
 }
 
-.logo {
-  font-size: 46px;
+.brand {
+  font-size: 25px;
   font-weight: 900;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
 }
 
-.logo span { color: #e32636; }
+.brand span {
+  color: #e32636;
+}
+
+nav a {
+  color: #bbb;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 13px;
+}
+
+nav a:hover {
+  color: #e32636;
+}
+
+.hero {
+  min-height: 420px;
+  padding: 90px 20px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at center,
+    #471016 0%, #1a0b0e 40%, #0b0b0e 78%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 .live {
-  color: #ff4545;
-  margin-top: 15px;
-  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #ff4856;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  background: #ff293e;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #ff293e;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  50% { opacity: .35; }
+}
+
+.hero h1 {
+  font-size: clamp(38px, 7vw, 72px);
+  font-weight: 900;
   letter-spacing: 3px;
 }
 
-main {
-  max-width: 650px;
-  margin: 55px auto;
+.hero h1 span {
+  color: #ed2939;
+}
+
+.hero p {
+  color: #b5aeb0;
+  margin-top: 18px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.player-section {
+  max-width: 760px;
+  margin: -35px auto 70px;
+  padding: 0 20px;
+  position: relative;
+}
+
+.player-card {
+  background: linear-gradient(145deg,#202025,#141417);
+  border: 1px solid #38383f;
+  border-top: 3px solid #e32636;
+  border-radius: 15px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: 0 15px 45px #0009;
+}
+
+.player-card h2 {
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+
+.player-card .subtitle {
+  color: #929299;
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+.player-box {
+  background: #101013;
+  border: 1px solid #33333a;
+  border-radius: 10px;
+  padding: 20px 12px;
+}
+
+.cc_player {
+  max-width: 100%;
+}
+
+.about {
+  max-width: 850px;
+  margin: 0 auto 80px;
   padding: 20px;
+  text-align: center;
 }
 
-.player {
-  background: #1d1d1d;
-  border: 1px solid #383838;
-  border-radius: 18px;
-  padding: 35px 20px;
+.about h2 {
+  font-size: 27px;
+  margin-bottom: 20px;
 }
 
-.player p { color: #aaa; }
+.about h2 span {
+  color: #e32636;
+}
+
+.about p {
+  color: #aaa;
+  line-height: 1.8;
+  font-size: 15px;
+}
 
 footer {
+  border-top: 1px solid #29292e;
+  background: #111114;
+  text-align: center;
+  padding: 30px 15px;
   color: #777;
-  padding: 30px;
   font-size: 13px;
+}
+
+footer strong {
+  color: #e32636;
+}
+
+@media(max-width:600px) {
+  header {
+    padding: 0 5%;
+  }
+
+  .brand {
+    font-size: 19px;
+  }
+
+  nav a {
+    margin-left: 10px;
+    font-size: 11px;
+  }
+
+  .hero {
+    min-height: 350px;
+    padding: 65px 15px;
+  }
+
+  .player-card {
+    padding: 28px 15px;
+  }
 }
 </style>
 </head>
@@ -63,36 +208,70 @@ footer {
 <body>
 
 <header>
-  <div class="logo">SZELESDOMB <span>FM</span></div>
-  <div class="live">● ÉLŐ ADÁS</div>
+  <div class="brand">SZELESDOMB <span>FM</span></div>
+
+  <nav>
+    <a href="#home">Főoldal</a>
+    <a href="#radio">Rádió</a>
+    <a href="#about">Rólunk</a>
+  </nav>
 </header>
 
-<main>
-  <div class="player">
-    <h2>Hallgasd élőben!</h2>
-    <p>Szelesdomb FM – Online rádió</p>
+<section class="hero" id="home">
 
-    
-
-
-<div class="cc_player"
-     data-username="onixevo"
-     data-size="sm"
-     data-style="dark">
-  Loading ...
-</div>
-
-<script src="https://eu4.fastcast4u.com/system/player.js"></script>
-
-
-
-
-    <p>Hamarosan indul az adás...</p>
+  <div class="live">
+    <span class="dot"></span>
+    ÉLŐ ADÁS
   </div>
-</main>
+
+  <h1>SZELESDOMB <span>FM</span></h1>
+
+  <p>A zene, ami mindig veled van.</p>
+
+</section>
+
+<section class="player-section" id="radio">
+
+  <div class="player-card">
+
+    <h2>Hallgasd élőben!</h2>
+
+    <p class="subtitle">
+      Kapcsold be, és élvezd az adást!
+    </p>
+
+    <div class="player-box">
+
+      <div class="cc_player"
+           data-username="onixevo"
+           data-size="sm"
+           data-style="dark">
+        Loading ...
+      </div>
+
+      <script src="https://eu4.fastcast4u.com/system/player.js"></script>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="about" id="about">
+
+  <h2>Üdvözöl a <span>Szelesdomb FM!</span></h2>
+
+  <p>
+    Köszöntünk a Szelesdomb FM hivatalos online rádióoldalán!
+    Hallgass minket bárhol, bármikor, és légy részese
+    a Szelesdomb FM világának!
+  </p>
+
+</section>
 
 <footer>
-  © 2026 Szelesdomb FM – Minden jog fenntartva.
+  © 2026 <strong>SZELESDOMB FM</strong>
+  | Minden jog fenntartva.
 </footer>
 
 </body>
